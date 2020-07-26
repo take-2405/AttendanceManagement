@@ -4,11 +4,11 @@ import (
 	"Attendance/pkg/db"
 )
 
-func InsertAttendanceTime(timeID,yearDate,RealTime string)error{
+func InsertTimeData(timeID,yearDate,RealTime string ,state int )error{
 	stmt, err := db.Conn.Prepare("INSERT INTO timeManagement VALUES (?,?,?,?)")
 	if err != nil {
 		return err
 	}
-	_, err = stmt.Exec(timeID,1,yearDate,RealTime)
+	_, err = stmt.Exec(timeID,state,yearDate,RealTime)
 	return err
 }
