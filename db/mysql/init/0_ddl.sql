@@ -5,22 +5,45 @@
 CREATE SCHEMA IF NOT EXISTS `time_management_app` DEFAULT CHARACTER SET utf8;
 USE `time_management_app`;
 
-# --
-# -- table
-# --
+ --
+ -- table
+ --
+-- -----------------------------------------------------
+-- Table `dojo_api`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `time_management_app`.`users` (
+`studentNumber` VARCHAR(64) NOT NULL COMMENT '学籍番号',
+`auth_token` VARCHAR(128) NOT NULL COMMENT '認証トークン',
+`name` VARCHAR(64) NOT NULL COMMENT 'ユーザ名',
+PRIMARY KEY (`studentNumber`),
+INDEX `idx_auth_token` (`auth_token` ASC))
+ENGINE = InnoDB
+COMMENT = 'ユーザ';
+
 CREATE TABLE IF NOT EXISTS `time_management_app`.`timeManagement` (
-#   `time_id` VARCHAR(128) NOT NULL COMMENT '時間ID',
-  `user_id` VARCHAR(128) NOT NULL COMMENT 'ユーザID',
-  `Status` INT NOT NULL COMMENT'時間ステータス 1:出勤 2:退勤 3:休憩(入) 4:休憩(戻)',
-  `yearDate` VARCHAR(64) NOT NULL COMMENT '年日付',
-  `hourMinute` VARCHAR(64) NOT NULL COMMENT '時分',
-  PRIMARY KEY (`user_id`)
+   `time_id` VARCHAR(128) NOT NULL COMMENT '時間ID',
+  `studentNumber` VARCHAR(128) NOT NULL COMMENT '学籍番号',
+  `Status` VARCHAR(128) NOT NULL COMMENT'active rest leave',
+  `year` INT NOT NULL COMMENT '年',
+  `month` INT NOT NULL COMMENT '月',
+  `date` INT NOT NULL COMMENT '日',
+  `hour` INT NOT NULL COMMENT '時間',
+  `minute` INT NOT NULL COMMENT '分',
+  PRIMARY KEY (`time_id`)
 )
+ENGINE = InnoDB
 COMMENT = '時間管理';
 
-# CREATE TABLE IF NOT EXISTS `time_management_app`.`timeDetails` (
-#     `time_id` VARCHAR(128) NOT NULL COMMENT '時間ID',
-#     `yearDate` VARCHAR(64) NOT NULL COMMENT '年日付',
-#     `hourMinute` VARCHAR(64) NOT NULL COMMENT '時分',
-#     PRIMARY KEY (`time_id`)
-# )
+CREATE TABLE IF NOT EXISTS `time_management_app`.`Time zone data`(
+    `time_id` VARCHAR(128) NOT NULL COMMENT '時間ID',
+    `working_hours` INT COMMENT '働いた時間(時)',
+    `working_minutes` INT COMMENT '働いた時間(分)'
+)
+ENGINE = InnoDB
+
+--  CREATE TABLE IF NOT EXISTS `time_management_app`.`timeDetails` (
+--      `time_id` VARCHAR(128) NOT NULL COMMENT '時間ID',
+--      `yearDate` VARCHAR(64) NOT NULL COMMENT '年日付',
+--      `hourMinute` VARCHAR(64) NOT NULL COMMENT '時分',
+--      PRIMARY KEY (`time_id`)
+--  )
