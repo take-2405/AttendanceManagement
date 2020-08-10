@@ -2,7 +2,6 @@
 package server
 
 import (
-	"Attendance/pkg/middleware"
 	"Attendance/pkg/server/handler"
 	"github.com/gin-gonic/gin"
 )
@@ -15,9 +14,13 @@ var (
 func init(){
 	Server = gin.Default()
 	Server.GET("/Auth", handler.HandleAuthCreate())
-	Server.GET("/Attendance", middleware.Authenticate(handler.HandleResistAttend()))
-	//Server.GET("/BreakIN", handler.HandleResistBreakIN())
-	//Server.GET("/BreakOUT", handler.HandleResistBreakOUT())
+	Server.GET("/Active", handler.HandleResistTimeData("active"))
+	Server.GET("/BreakIN", handler.HandleResistTimeData("breakIN"))
+	Server.GET("/BreakOUT", handler.HandleResistTimeData("breakOUT"))
+	Server.GET("/Leave", handler.HandleResistTimeData("leave"))
+	//Server.GET("/Attendance", middleware.Authenticate(handler.HandleResistAttend()))
+	//Server.GET("/BreakIN", middleware.Authenticate(handler.HandleResistBreakIN()))
+	//Server.GET("/BreakOUT", middleware.Authenticate(handler.HandleResistBreakOUT()))
 	//Server.GET("/Retired", middleware.Authenticate(handler.HandleResistRetired()))
 }
 
