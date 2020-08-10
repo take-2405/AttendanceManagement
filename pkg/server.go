@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	"AttendanceMagegement/pkg/handler"
+	"AttendanceManagement/pkg/handler"
 	"github.com/gin-gonic/gin"
 )
 
