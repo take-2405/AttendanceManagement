@@ -22,5 +22,7 @@ $ export MYSQL_USER=root \
 
 ## APIローカル起動方法
 ```
-$ go run main.go
+上記の「ターミナルでプログラムを実行する前に以下のコマンドを入力する」の部分のコマンドを端末にて実行  
+DBの作成 docker-compose up -d (Dockerのinstallが必要)
+$ go run main.go  
 ```
