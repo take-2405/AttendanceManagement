@@ -11,7 +11,7 @@ type TimeData struct{
 	Minute int
 }
 
-func InsertAttendanceTime(timeID,studentNumber,state string,timeInformation timeData )error{
+func InsertAttendanceTime(timeID,studentNumber,state string,timeInformation TimeData )error{
 	stmt, err := db.Conn.Prepare("INSERT INTO timeManagement VALUES (?,?,?,?,?,?,?,?)")
 	if err != nil {
 		return err

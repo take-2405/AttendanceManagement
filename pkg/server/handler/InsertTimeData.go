@@ -5,7 +5,6 @@ import (
 	"Attendance/pkg/server/view"
 	"Attendance/pkg/timedata"
 	"errors"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"log"
@@ -18,6 +17,7 @@ func HandleResistTimeData(status string)gin.HandlerFunc{
 		var modelTimeData model.TimeData
 		// Contextから認証済みのユーザIDを取得
 		studentNumber := c.GetString("studentNumber")
+		//fmt.Println(studentNumber)
 		if len(studentNumber) == 0 {
 			log.Println(errors.New("studentNumber is empty"))
 			c.JSON(http.StatusInternalServerError, "Internal Server Error")
