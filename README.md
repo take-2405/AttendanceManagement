@@ -22,24 +22,24 @@ MySQLへの接続設定をします。
 Macの場合
 ```
 $ export MYSQL_USER=root \
-    MYSQL_PASSWORD=ca-tech-dojo-go-2020 \
+    MYSQL_PASSWORD=rootpassword \
     MYSQL_HOST=127.0.0.1 \
     MYSQL_PORT=3306 \
-    MYSQL_DATABASE=dojo_api
+    MYSQL_DATABASE=time_management_app
 ```
 
 Windowsの場合
 ```
 $ SET MYSQL_USER=root
-$ SET MYSQL_PASSWORD=ca-tech-dojo-go-2020
+$ SET MYSQL_PASSWORD=rootpassword
 $ SET MYSQL_HOST=127.0.0.1
 $ SET MYSQL_PORT=3306
-$ SET MYSQL_DATABASE=dojo_api
+$ SET MYSQL_DATABASE=time_management_app
 ```
 
 ## APIローカル起動方法
 ```
-上記の「ターミナルでプログラムを実行する前に以下のコマンドを入力する」の部分のコマンドを端末にて実行  
+上記の「API用のデータベースの接続情報を設定する」の部分のコマンドを端末にて実行  
 DBの作成 docker-compose up -d (Dockerのinstallが必要)
 $ go run main.go  
 ```
