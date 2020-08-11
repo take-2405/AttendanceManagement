@@ -14,14 +14,24 @@ MySQLへの接続設定をします。
  Password: 
  Default Schema: 
  ```
-ターミナルでプログラムを実行する前に以下のコマンドを入力する
- ```
+
+API用のデータベースの接続情報を設定する
+環境変数にデータベースの接続情報を設定します。
+
+Macの場合
+
 $ export MYSQL_USER=root \
-    MYSQL_PASSWORD=rootpassword \
+    MYSQL_PASSWORD=ca-tech-dojo-go-2020 \
     MYSQL_HOST=127.0.0.1 \
     MYSQL_PORT=3306 \
-    MYSQL_DATABASE=time_management_app
-```
+    MYSQL_DATABASE=dojo_api
+Windowsの場合
+
+$ SET MYSQL_USER=root
+$ SET MYSQL_PASSWORD=ca-tech-dojo-go-2020
+$ SET MYSQL_HOST=127.0.0.1
+$ SET MYSQL_PORT=3306
+$ SET MYSQL_DATABASE=dojo_api
 
 ## APIローカル起動方法
 ```
