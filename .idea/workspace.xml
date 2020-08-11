@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33072643-b672-4954-ad7b-7bd1a0cf20f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/mysql/init/0_ddl.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/mysql/my.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/db/conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/middleware/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/handler/InsertTimeData.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/handler/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/model/InsertTimeData.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/model/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/view/InsertTimeData.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/server/view/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/timedata/timeDataCreate.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/server.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +39,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
   <component name="ProjectId" id="1f7YVw2bPQTHuPL4u6uk5JrCrw2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -37,10 +57,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
 </project>

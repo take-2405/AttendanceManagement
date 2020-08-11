@@ -1,8 +1,9 @@
+  
 package main
 
 import (
+	"Attendance/pkg/server"
 	"flag"
-	"AttendanceManagement/pkg"
 )
 
 var (
@@ -16,5 +17,5 @@ func init() {
 }
 
 func main() {
-	pkg.Server.Run(addr)
+	server.Server.Run(addr)
 }
