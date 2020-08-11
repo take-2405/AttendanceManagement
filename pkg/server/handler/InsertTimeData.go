@@ -2,6 +2,7 @@ package handler
 
 import (
 	"Attendance/pkg/server/model"
+	"Attendance/pkg/server/view"
 	"Attendance/pkg/timedata"
 	"errors"
 	"fmt"
@@ -13,7 +14,8 @@ import (
 
 func HandleResistTimeData(status string)gin.HandlerFunc{
 	return func(c *gin.Context){
-
+		var Response view.InsertTimeDataResponse
+		var modelTimeData model.TimeData
 		// Contextから認証済みのユーザIDを取得
 		studentNumber := c.GetString("studentNumber")
 		if len(studentNumber) == 0 {
@@ -22,8 +24,12 @@ func HandleResistTimeData(status string)gin.HandlerFunc{
 			return
 		}
 
-		var timeInformation [5]int
-		timeInformation =timedata.CreateTimeData()
+		//var timeInformation [5]int
+		//timeInformation =timedata.CreateTimeData()
+		//レスポンス用にviewの構造体に挿入
+		Response.Timedata=timedata.CreateTimeData()
+		//DBにも必要なので変換する
+		modelTimeData=convertingViewAndModelStructure(Response.Timedata)
 
 		//UUIDでユーザIDを生成する
 		timeID, err := uuid.NewRandom()
@@ -32,13 +38,24 @@ func HandleResistTimeData(status string)gin.HandlerFunc{
 			c.JSON(http.StatusInternalServerError, "timeID is error")
 			return
 		}
-		if err:= model.InsertAttendanceTime(timeID.String(),studentNumber,status,timeInformation);err!=nil{
+		Response.TimeID=timeID.String()
+		Response.Status=status
+		if err:= model.InsertAttendanceTime(timeID.String(),studentNumber,status,modelTimeData);err!=nil{
 			log.Println(err)
 			c.JSON(http.StatusInternalServerError, "Internal Server Error")
 			return
 		}
-		fmt.Println("ok")
-		c.JSON(http.StatusOK, "")
+		c.JSON(http.StatusOK, view.InsertTimeDataResponse{TimeID: Response.TimeID,Status: Response.Status,Timedata: Response.Timedata})
 		return
 	}
+}
+
+func convertingViewAndModelStructure(viewTimedata view.TimeData)model.TimeData{
+	var modelTimedata model.TimeData
+	modelTimedata.Year = viewTimedata.Year
+	modelTimedata.Month = viewTimedata.Month
+	modelTimedata.Day = viewTimedata.Day
+	modelTimedata.Hour = viewTimedata.Hour
+	modelTimedata.Minute = viewTimedata.Minute
+	return modelTimedata
 }

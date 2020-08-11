@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `time_management_app`.`timeManagement` (
   `Status` VARCHAR(128) NOT NULL COMMENT'active rest leave',
   `year` INT NOT NULL COMMENT '年',
   `month` INT NOT NULL COMMENT '月',
-  `date` INT NOT NULL COMMENT '日',
+  `day` INT NOT NULL COMMENT '日',
   `hour` INT NOT NULL COMMENT '時間',
   `minute` INT NOT NULL COMMENT '分',
   PRIMARY KEY (`time_id`)

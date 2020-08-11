@@ -13,7 +13,6 @@ import (
 
 func HandleResistAttend()gin.HandlerFunc{
 		return func(c *gin.Context){
-
 			// Contextから認証済みのユーザIDを取得
 			studentNumber := c.GetString("studentNumber")
 			if len(studentNumber) == 0 {

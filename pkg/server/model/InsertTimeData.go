@@ -3,12 +3,19 @@ package model
 import (
 	"Attendance/pkg/db"
 )
+type TimeData struct{
+	Year int
+	Month int
+	Day int
+	Hour int
+	Minute int
+}
 
-func InsertAttendanceTime(timeID,studentNumber,state string,timeInformation [5]int )error{
+func InsertAttendanceTime(timeID,studentNumber,state string,timeInformation timeData )error{
 	stmt, err := db.Conn.Prepare("INSERT INTO timeManagement VALUES (?,?,?,?,?,?,?,?)")
 	if err != nil {
 		return err
 	}
-	_, err = stmt.Exec(timeID,studentNumber,state,timeInformation[0],timeInformation[1],timeInformation[2],timeInformation[3],timeInformation[4])
+	_, err = stmt.Exec(timeID,studentNumber,state,timeInformation.Year,timeInformation.Month,timeInformation.Day,timeInformation.Hour,timeInformation.Minute)
 	return err
 }
