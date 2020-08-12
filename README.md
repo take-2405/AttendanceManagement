@@ -9,7 +9,7 @@ MySQLへの接続設定をします。
  Connection Name: 任意
  Connection Method: Standard (TCP/IP)
  Hostname: 配布されたサーバのグローバルIP
- Port: 3306
+ Port: 3000
  Username: 
  Password: 
  Default Schema: 
@@ -24,7 +24,7 @@ Macの場合
 $ export MYSQL_USER=root \
     MYSQL_PASSWORD=rootpassword \
     MYSQL_HOST=127.0.0.1 \
-    MYSQL_PORT=3306 \
+    MYSQL_PORT=3000 \
     MYSQL_DATABASE=time_management_app
 ```
 
@@ -33,7 +33,7 @@ Windowsの場合
 $ SET MYSQL_USER=root
 $ SET MYSQL_PASSWORD=rootpassword
 $ SET MYSQL_HOST=127.0.0.1
-$ SET MYSQL_PORT=3306
+$ SET MYSQL_PORT=3000
 $ SET MYSQL_DATABASE=time_management_app
 ```
 
