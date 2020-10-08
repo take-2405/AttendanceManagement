@@ -19,6 +19,7 @@ func InsertUser(AuthToken,Name,StudentNumber string)error{
 		return err
 	}
 	_, err = stmt.Exec(StudentNumber,AuthToken,Name)
+	log.Println(err)
 	return err
 }
 

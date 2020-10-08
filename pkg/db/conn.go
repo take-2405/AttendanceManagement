@@ -29,6 +29,7 @@ func init() {
 	// 接続先データベース
 	database := os.Getenv("MYSQL_DATABASE")
 
+
 	// 接続情報は以下のように指定する.
 	// user:password@tcp(host:port)/database
 	var err error
